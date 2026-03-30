@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 env:
-  MCP_SERVER_IMAGE_NAME: quay.io/{{ cookiecutter.quay_username }}/titanic/mcp-server
+  MCP_SERVER_IMAGE_NAME: quay.io/ktomtarrab2026/titanic/mcp-server
   MCP_SERVER_DEPLOYMENT_NAME: titanic-mcp-server
   MCP_SERVER_SECRET_NAME: mcp-oauth2-credentials
 
@@ -24,10 +24,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Python {{ cookiecutter.__python_version }}
+      - name: Set up Python 3.13
         uses: actions/setup-python@v3
         with:
-          python-version: {{ cookiecutter.__python_version }}
+          python-version: 3.13
       - name: Install dependencies
         run: |
             echo "To implement"
